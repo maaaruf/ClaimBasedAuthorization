@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using ClaimBasedAuthorizationSample.Models;
+using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 
-namespace ClaimBasedAuthorizationSample.Models
+namespace ClaimBasedAuthorizationSample.Seeds
 {
     public static class DefaultRoles
     {

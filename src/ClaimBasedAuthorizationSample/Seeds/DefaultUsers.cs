@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using ClaimBasedAuthorizationSample.Models;
+using Microsoft.AspNetCore.Identity;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace ClaimBasedAuthorizationSample.Models
+namespace ClaimBasedAuthorizationSample.Seeds
 {
     public static class DefaultUsers
     {
@@ -15,7 +16,7 @@ namespace ClaimBasedAuthorizationSample.Models
                 Email = "basicuser@gmail.com",
                 EmailConfirmed = true
             };
-            
+
             if (userManager.Users.All(u => u.Id != defaultUser.Id))
             {
                 var user = await userManager.FindByEmailAsync(defaultUser.Email);
