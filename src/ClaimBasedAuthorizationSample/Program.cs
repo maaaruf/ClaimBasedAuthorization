@@ -13,9 +13,10 @@ namespace ClaimBasedAuthorizationSample
 {
     public class Program
     {
-        public async static void Main(string[] args)
+        public async static Task Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
+
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
@@ -36,10 +37,7 @@ namespace ClaimBasedAuthorizationSample
                     logger.LogWarning(ex, "An error occurred seeding the DB");
                 }
             }
-
             host.Run();
-
-            //CreateHostBuilder(args).Build().Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
